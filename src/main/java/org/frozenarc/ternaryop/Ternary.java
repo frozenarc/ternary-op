@@ -11,9 +11,6 @@ public class Ternary<T> implements WhenTest<T>, ThenDo<T>, ElseDo<T> {
 
     }
 
-    /*
-    Seq forcing, and making sure that method will be used only once
-     */
     public static <T> WhenTest<T> optr() {
         return new Ternary<>();
     }
