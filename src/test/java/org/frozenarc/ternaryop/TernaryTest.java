@@ -1,6 +1,5 @@
 package org.frozenarc.ternaryop;
 
-import org.frozenarc.ternaryop.Ternary;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ public class TernaryTest {
         return Ternary.optr();
     }
 
-    private String test(ArrayList list) {
+    private String test(ArrayList<String> list) {
         return optrStr()
                 .whn(() -> list.size() > 0)
                 .thn(() -> optrStr()
@@ -27,28 +26,28 @@ public class TernaryTest {
 
     @Test
     public void testEmpty() {
-        ArrayList list = new ArrayList();
-        Assert.assertTrue(test(list).equals("Empty"));
+        ArrayList<String> list = new ArrayList<>();
+        Assert.assertEquals("Empty", test(list));
     }
 
     @Test
     public void testNull() {
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<>();
         list.add(null);
-        Assert.assertTrue(test(list).equals("Null Element"));
+        Assert.assertEquals("Null Element", test(list));
     }
 
     @Test
     public void test1() {
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<>();
         list.add("1");
-        Assert.assertTrue(test(list).equals("1"));
+        Assert.assertEquals("1", test(list));
     }
 
     @Test
     public void testOther() {
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<>();
         list.add("2");
-        Assert.assertTrue(test(list).equals("Other Number"));
+        Assert.assertEquals("Other Number", test(list));
     }
 }

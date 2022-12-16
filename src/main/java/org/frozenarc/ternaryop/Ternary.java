@@ -27,7 +27,7 @@ public class Ternary<T> implements WhenTest<T>, ThenDo<T>, ElseDo<T> {
 
     public T els(Supplier<T> supplier) {
         return whnSupplier.get()
-                ? thnSupplier.get()
-                : supplier.get();
+               ? thnSupplier.get()
+               : supplier.get();
     }
 }
